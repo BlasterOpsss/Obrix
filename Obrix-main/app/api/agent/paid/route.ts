@@ -18,7 +18,7 @@ const server = new x402ResourceServer(
 )
 server.register('eip155:*', new ExactEvmScheme())
 
-const handler = async (req: NextRequest) => {
+const handler = async (req: NextRequest): Promise<NextResponse> => {
   const body = await req.json().catch(() => null)
   const message = typeof body?.message === 'string' ? body.message.trim().slice(0, 1000) : ''
   if (!message) return NextResponse.json({ error: 'Send JSON like {"message":"A token called Moon Cat with ticker $MCAT"}' }, { status: 400 })
