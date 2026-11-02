@@ -1,5 +1,6 @@
 'use client'
 
+import { ThinkingSphere } from '@/components/ThinkingSphere'
 import { useEffect, useRef, useState } from 'react'
 import { useAccount, useReadContract, useSignMessage } from 'wagmi'
 import { formatUnits, type Address } from 'viem'
@@ -73,6 +74,7 @@ export default function AgentPage() {
     if (!message || busy) return
     setInput('')
     setBusy(true)
+    const t0 = Date.now()
     setMessages((m) => [...m, { role: 'user', text: message }])
     try {
       const proof = await getProof()
@@ -82,6 +84,7 @@ export default function AgentPage() {
         body: JSON.stringify({ message, proof }),
       })
       const json = await res.json()
+      await new Promise((r) => setTimeout(r, Math.max(0, 2200 - (Date.now() - t0))))
       if (!res.ok) throw new Error(json.error || 'Agent unavailable.')
       const draft = json.name && json.symbol ? { name: json.name, symbol: json.symbol, description: json.description || '' } : undefined
       setMessages((m) => [...m, { role: 'agent', text: json.reply, draft }])
@@ -139,7 +142,7 @@ export default function AgentPage() {
               )}
             </div>
           ))}
-          {busy && <div className="obrix-agent-msg is-agent"><p>thinking…</p></div>}
+          {busy && <ThinkingSphere />}
           <div ref={endRef} />
         </div>
       </main>
