@@ -30,17 +30,25 @@ function extractText(value: unknown): string {
   if (typeof value === 'string') return value
   if (!value || typeof value !== 'object') return ''
   const record = value as Record<string, unknown>
-  for (const key of ['text','message','response','content','answer']) {
+  for (const key of ['text', 'message', 'response', 'content', 'answer']) {
     const item = record[key]
     if (typeof item === 'string' && item.trim()) return item
     if (item && typeof item === 'object') { const nested = extractText(item); if (nested) return nested }
-    if (Array.isArray(item)) { const joined = item.map(extractText).filter(Boolean).join('\n'); if (joined) return joined }
+    if (Array.isArray(item)) { const joined = item.map(extractText).filter(Boolean).join('\\n'); if (joined) return joined }
   }
   return ''
 }
 const server = createServer(async (req, res) => {
-  if (req.method === 'GET' && req.url === '/healthz') return send(res, 200, { ok: true, service: 'obrix-elizaos-bridge' })
-  if (req.method !== 'POST' || req.url !== '/chat') return send(res, 404, { error: 'Not found.' })
+  const pathname = new URL(req.url || '/', 'http://localhost').pathname.replace(/\\/+$/, '') || '/'
+  console.log('OBRIX bridge request:', req.method, pathname)
+
+  if (req.method === 'GET' && pathname === '/') {
+    return send(res, 200, { ok: true, service: 'obrix-elizaos-bridge', endpoints: ['/healthz', '/chat'] })
+  }
+  if (req.method === 'GET' && pathname === '/healthz') {
+    return send(res, 200, { ok: true, service: 'obrix-elizaos-bridge' })
+  }
+  if (req.method !== 'POST' || pathname !== '/chat') return send(res, 404, { error: 'Not found.' })
   if (!authorized(req)) return send(res, 401, { error: 'Unauthorized.' })
   try {
     const body = await readBody(req) as { message?: unknown; userId?: unknown }
