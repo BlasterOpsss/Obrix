@@ -1,6 +1,6 @@
 FROM oven/bun:1.2
 WORKDIR /app
-RUN apt-get update && apt-get install -y --no-install-recommends procps && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends procps nodejs npm && rm -rf /var/lib/apt/lists/*
 COPY Obrix-main/services/elizaos/package.json ./package.json
 RUN bun install
 COPY Obrix-main/services/elizaos/ ./
