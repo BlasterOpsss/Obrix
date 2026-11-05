@@ -7,7 +7,7 @@ This directory is the deployment boundary for the OBRIX AI runtime. Keep it sepa
 From the repository root:
 
     bun install -g @elizaos/cli
-    elizaos create obrix-copilot --template project --dir services/elizaos
+    elizaos create obrix-copilot --type project --dir services/elizaos
 
 If the CLI asks for a database, choose PostgreSQL for a persistent deployment (or its local development option while testing). Configure a model provider in the generated service's local environment, then:
 
