@@ -26,13 +26,13 @@ export async function POST(request: Request) {
   if (!message) return NextResponse.json({ error: 'Enter a message first.' }, { status: 400 })
 
   const headers: Record<string, string> = { 'content-type': 'application/json', accept: 'application/json' }
-  if (process.env.ELIZAOS_API_TOKEN) headers.authorization = 'Bearer ' + process.env.ELIZAOS_API_TOKEN
+  if (process.env.OBRIX_COPILOT_TOKEN) headers.authorization = 'Bearer ' + process.env.OBRIX_COPILOT_TOKEN
 
   try {
     const upstream = await fetch(endpoint, {
       method: 'POST',
       headers,
-      body: JSON.stringify({ text: message, userId: sessionId || 'obrix-web-user' }),
+      body: JSON.stringify({ message, userId: sessionId || 'obrix-web-user' }),
       signal: AbortSignal.timeout(30_000),
       cache: 'no-store',
     })
