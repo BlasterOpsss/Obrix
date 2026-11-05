@@ -37,6 +37,7 @@ export function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Launch', href: '/launch' },
     { label: 'Explore', href: '/explore' },
+    { label: 'AI Copilot', href: '/copilot' },
     { label: 'AI Agents', href: '/agent' },
     { label: 'Payments', href: '/payments' },
     { label: 'How it works', href: '/how-it-works' },
