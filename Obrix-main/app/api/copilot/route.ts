@@ -40,7 +40,25 @@ export async function POST(request: Request) {
     let payload: unknown
     try { payload = JSON.parse(raw) } catch { payload = { text: raw } }
     if (!upstream.ok) {
-      return NextResponse.json({ error: 'The ElizaOS service rejected the message. Check its endpoint and authentication.' }, { status: upstream.status >= 500 ? 502 : upstream.status })
+      const upstreamError = payload && typeof payload === 'object' && 'error' in payload
+        ? String((payload as { error: unknown }).error).slice(0, 240)
+        : ''
+      const detail = payload && typeof payload === 'object' && 'detail' in payload
+        ? String((payload as { detail: unknown }).detail).slice(0, 240)
+        : ''
+      const statusHint = upstream.status === 401
+        ? 'Authentication failed: make sure OBRIX_COPILOT_TOKEN matches exactly in Vercel and Railway.'
+        : upstream.status === 404
+          ? 'The Railway URL or /chat path is incorrect. Check ELIZAOS_CHAT_URL.'
+          : upstream.status >= 500
+            ? 'The Railway bridge or ElizaOS runtime failed while processing the request.'
+            : 'The Railway bridge rejected the request.'
+      return NextResponse.json({
+        error: statusHint,
+        upstreamStatus: upstream.status,
+        ...(upstreamError ? { upstreamError } : {}),
+        ...(detail ? { detail } : {}),
+      }, { status: upstream.status >= 500 ? 502 : upstream.status })
     }
     return NextResponse.json(payload)
   } catch (error) {
