@@ -160,6 +160,7 @@ export default function Home() {
               { n: '01', title: 'Launch a token', body: 'Fill in your token details, preview it live and deploy through Pons V2.', href: '/launch' },
               { n: '02', title: 'Explore launches', body: 'See every token launched through the factory, read straight from the chain.', href: '/explore' },
               { n: '03', title: 'Talk to the agent', body: 'Describe your token in plain words and let the agent draft it for you.', href: '/agent' },
+              { n: '04', title: 'AI Copilot', body: 'Ask about Pons V2, token launches and project strategy before you act.', href: '/copilot' },
             ].map((c) => (
               <a className="obrix-go-card" href={c.href} key={c.n}>
                 <span>{c.n}</span>
