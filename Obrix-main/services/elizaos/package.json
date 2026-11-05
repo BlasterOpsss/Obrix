@@ -4,7 +4,7 @@
   "version":"0.1.0",
   "type":"module",
   "scripts":{
-    "runtime":"elizaos start --character ./character.json --port 3001",
+    "runtime":"elizaos agent start --path ./character.json --port 3001",
     "bridge":"bun run ./bridge.ts",
     "start":"concurrently --kill-others \"bun run runtime\" \"bun run bridge\""
   },
