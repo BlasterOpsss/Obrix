@@ -34,12 +34,12 @@ function extractText(value: unknown): string {
     const item = record[key]
     if (typeof item === 'string' && item.trim()) return item
     if (item && typeof item === 'object') { const nested = extractText(item); if (nested) return nested }
-    if (Array.isArray(item)) { const joined = item.map(extractText).filter(Boolean).join('\\n'); if (joined) return joined }
+    if (Array.isArray(item)) { const joined = item.map(extractText).filter(Boolean).join('\n'); if (joined) return joined }
   }
   return ''
 }
 const server = createServer(async (req, res) => {
-  const pathname = new URL(req.url || '/', 'http://localhost').pathname.replace(/\\/+$/, '') || '/'
+  const pathname = new URL(req.url || '/', 'http://localhost').pathname.replace(/\/+$/, '') || '/'
   console.log('OBRIX bridge request:', req.method, pathname)
 
   if (req.method === 'GET' && pathname === '/') {
