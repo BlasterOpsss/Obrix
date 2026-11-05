@@ -1,20 +1,22 @@
 {
-  "name":"@obrix/elizaos-service",
-  "private":true,
-  "version":"0.1.0",
-  "type":"module",
-  "scripts":{
-    "runtime":"elizaos agent start --path ./character.json --port 3001",
-    "bridge":"bun run ./bridge.ts",
-    "start":"concurrently --kill-others \"bun run runtime\" \"bun run bridge\""
+  "name": "@obrix/elizaos-service",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "runtime": "elizaos agent start --path ./character.json --port 3001",
+    "bridge": "bun run ./bridge.ts",
+    "start": "concurrently --kill-others \"bun run runtime\" \"bun run bridge\""
   },
-  "dependencies":{
-    "@elizaos/api-client":"1.7.2",
-    "@elizaos/cli":"1.7.2",
-    "@elizaos/plugin-bootstrap":"1.7.2",
-    "@elizaos/plugin-openai":"1.7.2",
-    "@elizaos/plugin-sql":"1.7.2",
-    "concurrently":"^9.2.1"
+  "dependencies": {
+    "@elizaos/api-client": "1.7.2",
+    "@elizaos/cli": "1.7.2",
+    "@elizaos/plugin-bootstrap": "1.7.2",
+    "@elizaos/plugin-openai": "1.6.0",
+    "@elizaos/plugin-sql": "1.7.2",
+    "concurrently": "^9.2.1"
   },
-  "engines":{"bun":">=1.2.0"}
+  "engines": {
+    "bun": ">=1.2.2"
+  }
 }
