@@ -26,18 +26,16 @@ interface FormState {
   xLink: string
   telegram: string
   website: string
-  developerBuy: number
   feeReceiver: string
   creatorTaxPct?: string
 }
 
 interface LaunchFormProps {
-  onSubmit?: (formData: FormState) => Promise<void>
   onChange?: (formData: FormState) => void
   initial?: { tokenName?: string; tokenSymbol?: string; description?: string }
 }
 
-export function LaunchForm({ onSubmit, onChange, initial }: LaunchFormProps) {
+export function LaunchForm({ onChange, initial }: LaunchFormProps) {
   const { address, isConnected, chainId } = useAccount()
   const { switchChain, isPending: isSwitching } = useSwitchChain()
   const { launchToken, isLoading, txHash, error, isConfirming, isConfirmed, receiptError } = useLaunchToken()
@@ -52,7 +50,6 @@ export function LaunchForm({ onSubmit, onChange, initial }: LaunchFormProps) {
     xLink: '',
     telegram: '',
     website: '',
-    developerBuy: 0,
     feeReceiver: address || '',
     creatorTaxPct: '0',
   })

@@ -1,49 +1,22 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { RainbowKitProviderWrapper } from '@/components/providers/rainbow-kit-provider'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'OXRIZ — Token Launch Infrastructure',
-  description: 'Launch tokens through Pons V2 on Robinhood Chain with OXRIZ.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
+  title: 'Pons V2 Token Launcher',
+  description: 'Create and deploy tokens through the Pons V2 factory on Robinhood Chain.',
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#08090b' },
-  ],
+  themeColor: '#090909',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "try{var t=localStorage.getItem('obrix-theme');document.documentElement.dataset.obrixTheme=(t==='night')?'night':'paper'}catch(e){document.documentElement.dataset.obrixTheme='paper'}",
-          }}
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <RainbowKitProviderWrapper>
-          {children}
-          {process.env.NODE_ENV === 'production' && <Analytics />}
-        </RainbowKitProviderWrapper>
+        <RainbowKitProviderWrapper>{children}</RainbowKitProviderWrapper>
       </body>
     </html>
   )
