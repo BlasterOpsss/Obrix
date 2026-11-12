@@ -10,7 +10,6 @@ const TOC = [
   ['economics', 'Fees and economics'],
   ['network', 'Network details'],
   ['images', 'Token images'],
-  ['agent', 'AI agent'],
   ['faq', 'FAQ'],
 ]
 
@@ -31,7 +30,7 @@ export default function DocsPage() {
 
         <h2 id="quick-start">Quick start</h2>
         <ol>
-          <li>Open the <a href="/launch">Launch</a> page, or describe your token to the <a href="/agent">agent</a>.</li>
+          <li>Open the <a href="/launch">Launch</a> page, .</li>
           <li>Enter the token name, ticker and description, and add an image.</li>
           <li>Connect your wallet and switch to Robinhood Chain.</li>
           <li>Press Deploy and confirm the transaction in your wallet.</li>
@@ -66,9 +65,6 @@ export default function DocsPage() {
 
         <h2 id="images">Token images</h2>
         <p>The factory stores a link to your image, not the image itself. If image upload is set up on this site, your file is pinned to IPFS and the link is filled in for you (images up to 2 MB). Otherwise, host the image yourself and paste a public https:// or ipfs:// link.</p>
-
-        <h2 id="agent">AI agent</h2>
-        <p>The agent turns a plain description into a draft name, ticker and description. It never sends a transaction. You review the draft on the Launch page and sign it yourself.</p>
 
         <h2 id="faq">FAQ</h2>
         <h3>Can a launch be undone?</h3>
