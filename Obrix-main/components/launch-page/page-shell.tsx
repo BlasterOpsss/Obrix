@@ -19,7 +19,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
   }, [])
 
   return (
-    <div className="obrix-site obrix-paper-grid obrix-explore">
+    <div className="obrix-site obrix-paper-grid obrix-explore obrix-interior-theme">
       <div className="obrix-x-ticker">
         <span><i /> LIVE</span>
         <span>BLOCK #{block ? block.toString() : '…'}</span>
