@@ -19,7 +19,7 @@ export default function AboutPage() {
       <p className="obrix-x-kicker">[ 06 ] ABOUT</p>
       <h1>Launch tools,<br />kept simple.</h1>
       <p className="obrix-x-sub">
-        Ignio is a launch interface for Pons V2 on Robinhood Chain. It helps you turn an idea into a token, with a clean form, a live preview and an agent that drafts the details with you.
+        Ignio is a launch interface for Pons V2 on Robinhood Chain. It helps you turn an idea into a token, with a clean form, a live preview and a direct wallet-signed launch flow.
       </p>
 
       <p className="obrix-x-label">● PRINCIPLES</p>
