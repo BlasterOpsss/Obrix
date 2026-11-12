@@ -1,9 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 import { Button } from '@/components/ui/button'
-import { Wallet, LogOut, Hexagon, Menu, X, Sun, Moon } from 'lucide-react'
+import { Wallet, LogOut, Menu, X } from 'lucide-react'
 import { robinhoodChain } from '@/lib/wagmi-config'
 
 export function Navbar() {
@@ -11,12 +11,6 @@ export function Navbar() {
   const { connectors, connect } = useConnect()
   const { disconnect } = useDisconnect()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [nightMode, setNightMode] = useState(false)
-
-  useEffect(() => {
-    setNightMode(document.documentElement.dataset.obrixTheme === 'night')
-  }, [])
-
   const handleConnect = () => {
     const connector = connectors[0]
     if (connector) connect({ connector })
@@ -59,17 +53,7 @@ export function Navbar() {
         </div>
 
         <div className="obrix-nav-actions">
-          <button
-            type="button"
-            className="obrix-theme-toggle"
-            onClick={switchTheme}
-            aria-label="Toggle dark and paper theme"
-            title="Toggle theme"
-          >
-            {nightMode ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
-
-          {isConnected && address ? (
+{isConnected && address ? (
             <div className="obrix-wallet-actions">
               {chainId !== robinhoodChain.id && (
                 <span className="obrix-network-warning">Wrong network</span>
@@ -121,11 +105,7 @@ export function Navbar() {
               <span className="obrix-menu-arrow">↗</span>
             </a>
           ))}
-          <button type="button" onClick={switchTheme} className="obrix-mobile-theme">
-            {nightMode ? <Sun size={17} /> : <Moon size={17} />}
-            Switch to {nightMode ? 'paper' : 'night'} mode
-          </button>
-        </div>
+</div>
       )}
     </header>
   )
