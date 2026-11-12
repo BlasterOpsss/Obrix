@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
       <div className="obrix-x-doc">
         <h2>What we collect</h2>
-        <p>OXRIZ has no accounts and does not ask for your name or email. When you connect a wallet, your browser reads your public wallet address so the site can show it and fill in the fee receiver. We do not store it on our servers.</p>
+        <p>IGNIO has no accounts and does not ask for your name or email. When you connect a wallet, your browser reads your public wallet address so the site can show it and fill in the fee receiver. We do not store it on our servers.</p>
 
         <h2>On-chain data is public</h2>
         <p>Transactions you send, and the token details you launch, are written to a public blockchain. Anyone can see them and they cannot be erased.</p>
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
         <ul>
           <li><strong>Usage statistics:</strong> in the live version, the site may use Vercel Analytics for aggregate page-view counts.</li>
           <li><strong>Hosting logs:</strong> our hosting provider may keep standard server logs, such as IP address and browser type, for security and reliability.</li>
-          <li><strong>Cookies:</strong> OXRIZ itself does not set tracking cookies.</li>
+          <li><strong>Cookies:</strong> IGNIO itself does not set tracking cookies.</li>
         </ul>
 
         <h2>Third parties you may interact with</h2>
@@ -35,10 +35,10 @@ export default function PrivacyPage() {
         </ul>
 
         <h2>Your choices</h2>
-        <p>You can use OXRIZ without uploading an image or using the agent. You can disconnect your wallet at any time from the site or from your wallet.</p>
+        <p>You can use IGNIO without uploading an image or using the agent. You can disconnect your wallet at any time from the site or from your wallet.</p>
 
         <h2>Children</h2>
-        <p>OXRIZ is not meant for people under 18 and we do not knowingly collect information from them.</p>
+        <p>IGNIO is not meant for people under 18 and we do not knowingly collect information from them.</p>
 
         <h2>Changes</h2>
         <p>We may update this policy and will change the date above when we do.</p>
