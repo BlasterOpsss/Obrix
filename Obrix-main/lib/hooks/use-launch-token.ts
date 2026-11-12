@@ -86,9 +86,9 @@ export function useLaunchToken() {
         }),
       ])
 
-      // First 5 bytes tag the launch as made through OxRiZ (shows up on the Explore tab); the rest stay random.
+      // First 5 bytes identify launches created through IGNIO; the remaining bytes stay random.
       const saltBytes = crypto.getRandomValues(new Uint8Array(32))
-      saltBytes.set([0x4f, 0x58, 0x52, 0x49, 0x5a], 0)
+      saltBytes.set([0x49, 0x47, 0x4e, 0x49, 0x4f], 0)
       const salt = toHex(saltBytes)
       const hash = await writeContractAsync({
         address: PONS_V2_FACTORY_ADDRESS,
