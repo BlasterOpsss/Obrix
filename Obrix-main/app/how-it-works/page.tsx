@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react'
 import { PageShell } from '@/components/launch-page/page-shell'
 
 const STEPS = [
-  { n: '01', title: 'Describe your token', body: 'Enter a name, ticker, description, image and optional links on the Launch page, or describe it to the agent and let it draft the details for you.' },
+  { n: '01', title: 'Describe your token', body: 'Enter your token name, ticker, description, image and optional links on the Launch page. Review the live preview before continuing.' },
   { n: '02', title: 'Connect your wallet', body: 'Connect a wallet and switch to Robinhood Chain (chain ID 4663). Your wallet stays in your control the whole time.' },
   { n: '03', title: 'Deploy through Pons V2', body: 'Right before launching, Ignio reads the current launch settings and launch fee from the Pons V2 factory and pins them into your transaction. You review and sign it in your wallet.' },
   { n: '04', title: 'Trade and track', body: 'The token has a fixed supply that is minted to its bonding curve. If the curve completes, the launch graduates into a Uniswap V4 pool with locked liquidity. Every launch shows up on the Explore page.' },
