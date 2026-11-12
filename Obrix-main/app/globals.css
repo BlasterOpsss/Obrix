@@ -1104,7 +1104,7 @@ cursor:pointer;
 }
 
 
-/* Robinhood Launchpad-inspired layout, connected to the live OXRIZ launch flow. */
+/* Robinhood Launchpad-inspired layout, connected to the live IGNIO launch flow. */
 .obrix-launchpad-redesign{background:#f4f5f9;color:#111;min-height:100vh;color-scheme:light}
 .obrix-launchpad-redesign .obrix-nav-shell{background:rgba(244,245,249,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(17,17,17,.08)}
 .obrix-launchpad-redesign .obrix-launchpad-main{max-width:1440px;margin:0 auto;padding:28px clamp(14px,3vw,42px) 90px}
@@ -1261,7 +1261,7 @@ cursor:pointer;
 }
 
 
-/* OXRIZ homepage — based on the supplied lime launchpad concept. */
+/* IGNIO homepage — based on the supplied lime launchpad concept. */
 .ox-home{
   --ox-lime:#cdff00;--ox-ink:#090909;--ox-white:#fff;
   min-height:100vh;background:var(--ox-lime);color:var(--ox-ink);
