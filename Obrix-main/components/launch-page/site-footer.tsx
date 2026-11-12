@@ -1,11 +1,11 @@
 export function SiteFooter() {
   return (
     <footer className="obrix-sf">
-      <div className="obrix-sf-word" aria-hidden="true">OXRIZ</div>
+      <div className="obrix-sf-word" aria-hidden="true">IGNIO</div>
       <div className="obrix-sf-inner">
-        <a href="/" className="obrix-sf-brand" aria-label="OXRIZ home">
-          <img src="/logo.svg" alt="" width={34} height={34} />
-          <span>OXRIZ</span>
+        <a href="/" className="obrix-sf-brand" aria-label="IGNIO home">
+          <img src="/ignio-logo.svg" alt="" width={34} height={34} />
+          <span>IGNIO</span>
         </a>
         <p className="obrix-sf-about">
           Token launches for Robinhood Chain. Describe your token, preview it, then deploy through Pons V2 straight from your own wallet.
@@ -24,10 +24,10 @@ export function SiteFooter() {
 
         <h4>THE SAME WALLET</h4>
         <p className="obrix-sf-about">
-          Every launch is signed by your own wallet, and the fee recipient defaults to that same wallet. OXRIZ never holds your keys or your funds, so check which wallet is connected before you deploy.
+          Every launch is signed by your own wallet, and the fee recipient defaults to that same wallet. IGNIO never holds your keys or your funds, so check which wallet is connected before you deploy.
         </p>
 
-        <p className="obrix-sf-copy">© 2026 OXRIZ // built for Robinhood Chain</p>
+        <p className="obrix-sf-copy">© 2026 IGNIO // built for Robinhood Chain</p>
       </div>
     </footer>
   )
