@@ -31,11 +31,10 @@ export default function PrivacyPage() {
           <li><strong>Blockchain RPC:</strong> your browser talks to the Robinhood Chain RPC to read data and send transactions, so that provider can see your IP address and requests.</li>
           <li><strong>Wallets and WalletConnect:</strong> if you connect with WalletConnect, that service handles the connection under its own policy.</li>
           <li><strong>Image upload:</strong> if you upload a token image, the file is sent through our server to an IPFS pinning service. IPFS content is public and may be impossible to remove.</li>
-          <li><strong>AI agent:</strong> if the agent is enabled, the text you type is sent to an AI provider to draft your token. Do not enter private information.</li>
         </ul>
 
         <h2>Your choices</h2>
-        <p>You can use IGNIO without uploading an image or using the agent. You can disconnect your wallet at any time from the site or from your wallet.</p>
+        <p>You can use IGNIO without uploading an image. You can disconnect your wallet at any time from the site or from your wallet.</p>
 
         <h2>Children</h2>
         <p>IGNIO is not meant for people under 18 and we do not knowingly collect information from them.</p>
