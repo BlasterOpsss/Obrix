@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Navbar } from '@/components/launch-page/navbar'
 
 const prompts = [
   { label: 'Fan token', text: 'Create a fan token called ' },
@@ -17,18 +16,27 @@ export default function Home() {
 
   return (
     <div className="ox-home">
-      <Navbar />
+      <header className="ox-home-header">
+        <a className="ox-home-logo" href="/" aria-label="OXRIZ home">OXRIZ</a>
+        <nav className="ox-home-links" aria-label="Main navigation">
+          <a href="/explore">Tokens</a>
+          <a href="/how-it-works">Safety</a>
+          <a href="/launch">Fees</a>
+          <a className="ox-home-login" href="/launch">Launch app</a>
+        </nav>
+      </header>
+
       <main className="ox-home-main">
-        <p className="ox-home-sub">Create and launch tokens on Robinhood Chain. Start with an idea, finish with an on-chain launch.</p>
+        <p className="ox-home-sub">Create a token with a simple prompt. No forms, no code.</p>
         <div className="ox-home-title" aria-label="Say it. Launch it.">
           <span>Say it.</span>
           <span>Launch it.</span>
         </div>
         <div className="ox-home-bubble">
-          Your next token starts with an idea. Shape it, preview it, and launch when you're ready.
-          <small>Powered by OXRIZ · Built for Robinhood Chain</small>
+          Your token idea is ready to take shape. Describe what you want to create and review it before launch.
+          <small>OXRIZ · Robinhood Chain</small>
         </div>
-        <a className="ox-home-launch" href="/launch">Launch a token <span aria-hidden="true">↗</span></a>
+        <a className="ox-home-launch" href="/launch">Launch it <span aria-hidden="true">↗</span></a>
       </main>
 
       <section className="ox-home-pills" aria-label="Token ideas">
@@ -48,7 +56,6 @@ export default function Home() {
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
         </button>
       </div>
-      <p className="ox-home-footnote">No forms to start. No code required to explore the launch flow.</p>
     </div>
   )
 }
