@@ -15,8 +15,6 @@ export function SiteFooter() {
         <nav className="obrix-sf-links">
           <a href="/launch">Launch a token</a>
           <a href="/explore">Explore launches</a>
-          <a href="/agent">AI agent</a>
-          <a href="/payments">x402 payments</a>
           <a href="/docs">Documentation</a>
           <a href="/how-it-works">How it works</a>
           <a href="/about">About</a>
