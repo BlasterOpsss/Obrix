@@ -19,14 +19,6 @@ export function Navbar() {
   const formatAddress = (addr: string) =>
     `${addr.slice(0, 6)}...${addr.slice(-4)}`
 
-  const switchTheme = () => {
-    const next = !nightMode
-    setNightMode(next)
-    const theme = next ? 'night' : 'paper'
-    document.documentElement.dataset.obrixTheme = theme
-    try { localStorage.setItem('obrix-theme', theme) } catch { /* ignore */ }
-  }
-
   const links = [
     { label: 'Home', href: '/' },
     { label: 'Launch', href: '/launch' },
