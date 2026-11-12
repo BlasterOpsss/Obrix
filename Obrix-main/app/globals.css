@@ -1139,3 +1139,123 @@ cursor:pointer;
 .obrix-launchpad-redesign .obrix-sf{margin-top:0}
 @media(max-width:900px){.obrix-launchpad-hero{grid-template-columns:1fr}.obrix-launchpad-hero-copy,.obrix-launchpad-hero-aside{min-height:270px}.obrix-launchpad-workspace{grid-template-columns:1fr}.obrix-launchpad-section-head{align-items:start;flex-direction:column;margin-top:46px}}
 @media(max-width:600px){.obrix-launchpad-redesign .obrix-launchpad-main{padding-top:14px}.obrix-launchpad-hero-copy,.obrix-launchpad-hero-aside{padding:24px;border-radius:24px}.obrix-launchpad-hero-copy h1{font-size:48px;margin:30px 0 14px}.obrix-launchpad-hero-meta{gap:12px;font-size:9px}.obrix-launchpad-form-panel,.obrix-launchpad-preview-panel,.obrix-launchpad-check-panel{padding:16px;border-radius:22px}}
+
+
+
+/* Interior pages: extend the refreshed launchpad visual system without changing the homepage. */
+.obrix-interior-theme{
+  --interior-bg:#f4f5f9;
+  --interior-ink:#111316;
+  --interior-muted:#626873;
+  --interior-line:rgba(17,19,22,.12);
+  background:var(--interior-bg)!important;
+  color:var(--interior-ink)!important;
+  color-scheme:light;
+  min-height:100vh;
+}
+.obrix-interior-theme .obrix-nav-shell{
+  background:rgba(244,245,249,.94);
+  color:var(--interior-ink);
+  border-bottom:1px solid var(--interior-line);
+  backdrop-filter:blur(16px);
+}
+.obrix-interior-theme .obrix-nav,
+.obrix-interior-theme .obrix-nav a{color:var(--interior-ink)}
+.obrix-interior-theme .obrix-brand{font-weight:800;letter-spacing:.12em}
+.obrix-interior-theme .obrix-brand-mark{
+  border:0;border-radius:9px;background:#111316;color:#ccff00;
+}
+.obrix-interior-theme .obrix-desktop-links a{font-size:12px;font-weight:650;opacity:.76}
+.obrix-interior-theme .obrix-desktop-links a:hover{color:#667d00;opacity:1}
+.obrix-interior-theme .obrix-wallet-button{
+  background:#111316!important;color:#fff!important;border:1px solid #111316!important;
+  border-radius:10px!important;min-height:42px;padding:0 16px;
+}
+.obrix-interior-theme .obrix-menu-toggle{
+  color:#111316;border:1px solid var(--interior-line);border-radius:10px;
+}
+.obrix-interior-theme .obrix-mobile-menu{
+  background:#f4f5f9;border-top:1px solid var(--interior-line);
+}
+.obrix-interior-theme .obrix-mobile-menu>a{color:#111316;border-color:var(--interior-line)}
+.obrix-interior-theme .obrix-menu-number,.obrix-interior-theme .obrix-menu-arrow{color:#718b00}
+.obrix-interior-theme .obrix-x-ticker{
+  background:#111316;color:#d7dbe0;font:10px ui-monospace,monospace;letter-spacing:.12em;
+}
+.obrix-interior-theme .obrix-x-ticker i{background:#ccff00;border-radius:50%;box-shadow:0 0 12px #ccff00}
+.obrix-interior-theme .obrix-x-main{
+  max-width:1120px;padding:clamp(28px,5vw,64px) clamp(16px,3vw,32px) 88px;
+}
+.obrix-interior-theme .obrix-x-kicker,
+.obrix-interior-theme .obrix-x-label{
+  color:#667d00;font:800 10px ui-monospace,monospace;letter-spacing:.14em;
+}
+.obrix-interior-theme .obrix-x-main h1{
+  color:#111316;font-size:clamp(42px,6vw,76px);line-height:.98;
+  letter-spacing:-.065em;font-weight:780;margin:0 0 20px;
+}
+.obrix-interior-theme .obrix-x-sub{
+  color:var(--interior-muted);font-size:16px;line-height:1.75;max-width:640px;
+}
+.obrix-interior-theme .obrix-x-card,
+.obrix-interior-theme .obrix-tk-box{
+  background:#fff;border:1px solid var(--interior-line);border-radius:22px;
+  box-shadow:0 8px 30px rgba(17,19,22,.035);color:#111316;
+}
+.obrix-interior-theme .obrix-x-card-title strong{color:#111316;font-size:17px}
+.obrix-interior-theme .obrix-x-card-title span,
+.obrix-interior-theme .obrix-x-rows dt,
+.obrix-interior-theme .obrix-x-note,
+.obrix-interior-theme .obrix-x-desc{color:#626873}
+.obrix-interior-theme .obrix-x-rows div{border-bottom:1px solid var(--interior-line)}
+.obrix-interior-theme .obrix-x-actions a,
+.obrix-interior-theme .obrix-x-actions button,
+.obrix-interior-theme .obrix-x-btn,
+.obrix-interior-theme .obrix-x-empty a{
+  background:#111316;color:#fff;border:1px solid #111316;border-radius:10px;
+  text-decoration:none;font-size:12px;font-weight:750;
+}
+.obrix-interior-theme .obrix-x-actions a:hover,
+.obrix-interior-theme .obrix-x-actions button:hover,
+.obrix-interior-theme .obrix-x-btn:hover{background:#ccff00;color:#111316;border-color:#ccff00}
+.obrix-interior-theme .obrix-x-btn.ghost{background:transparent;color:#111316}
+.obrix-interior-theme .obrix-x-search,
+.obrix-interior-theme .obrix-x-sort,
+.obrix-interior-theme .obrix-x-buy-input{
+  background:#fff;color:#111316;border:1px solid rgba(17,19,22,.18);border-radius:12px;
+}
+.obrix-interior-theme .obrix-x-search input{background:transparent;color:#111316;outline:0}
+.obrix-interior-theme .obrix-x-search input::placeholder{color:#8a9099}
+.obrix-interior-theme .obrix-x-empty{background:#fff;border:1px dashed rgba(17,19,22,.2);border-radius:20px}
+.obrix-interior-theme .obrix-x-list li{border-bottom:1px solid var(--interior-line);color:#414750}
+.obrix-interior-theme .obrix-x-list li::before{background:#a7cf00;border-radius:50%}
+.obrix-interior-theme .obrix-x-note-box{background:#e9edf2;border:1px solid var(--interior-line);border-radius:14px;color:#515862;line-height:1.7}
+.obrix-interior-theme .obrix-tk-head h1{font-size:clamp(30px,4vw,48px)}
+.obrix-interior-theme .obrix-tk-back{color:#667d00;text-decoration:none;font-weight:700}
+.obrix-interior-theme .obrix-tk-box{padding:18px}
+.obrix-interior-theme .obrix-tk-tabs button,
+.obrix-interior-theme .obrix-x-tabs button,
+.obrix-interior-theme .obrix-x-chips button{
+  border:1px solid var(--interior-line);border-radius:9px;background:#f1f2f5;color:#333;
+}
+.obrix-interior-theme .obrix-tk-tabs button.is-on,
+.obrix-interior-theme .obrix-x-tabs button.is-on,
+.obrix-interior-theme .obrix-x-chips button:hover{background:#ccff00;color:#111316;border-color:#ccff00}
+.obrix-interior-theme .obrix-x-buy{background:#f4f5f9;border:1px solid var(--interior-line);border-radius:14px}
+.obrix-interior-theme .obrix-x-buy-btn{background:#111316;color:white;border:0;border-radius:10px}
+.obrix-interior-theme .obrix-x-buy-btn:disabled{opacity:.45}
+.obrix-interior-theme .obrix-sf{background:#111316;color:#f4f5f9;margin-top:0}
+.obrix-interior-theme .obrix-sf-word{color:rgba(255,255,255,.035)}
+.obrix-interior-theme .obrix-sf-inner{max-width:1120px}
+.obrix-interior-theme .obrix-sf-brand{color:#fff;text-decoration:none;font-weight:800;letter-spacing:.12em}
+.obrix-interior-theme .obrix-sf-about{color:#aeb4bd;line-height:1.7}
+.obrix-interior-theme .obrix-sf h4{color:#ccff00;font:800 10px ui-monospace,monospace;letter-spacing:.14em}
+.obrix-interior-theme .obrix-sf-links a{color:#e7e9ec;text-decoration:none}
+.obrix-interior-theme .obrix-sf-links a:hover{color:#ccff00}
+.obrix-interior-theme .obrix-sf-copy{color:#858c96;border-top:1px solid rgba(255,255,255,.14);padding-top:18px}
+@media(max-width:640px){
+ .obrix-interior-theme .obrix-x-main{padding-top:28px}
+ .obrix-interior-theme .obrix-x-main h1{font-size:clamp(38px,12vw,54px)}
+ .obrix-interior-theme .obrix-x-grid,.obrix-interior-theme .obrix-x-steps{grid-template-columns:1fr}
+ .obrix-interior-theme .obrix-sf-inner{padding-left:20px;padding-right:20px}
+}
