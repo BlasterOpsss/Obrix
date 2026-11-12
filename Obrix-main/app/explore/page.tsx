@@ -9,12 +9,11 @@ import { SiteFooter } from '@/components/launch-page/site-footer'
 import { MarketStats, useMarket } from '@/components/explore/token-trade'
 import { LivePanel } from '@/components/explore/token-live'
 import { robinhoodChain } from '@/lib/wagmi-config'
-import { GATE_TOKEN } from '@/lib/agent-gate'
 import { isImpersonation } from '@/lib/brand-guard'
 import { PONS_V2_FACTORY_ADDRESS } from '@/lib/hooks/use-launch-token'
 
 // The official OXRIZ token comes from NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS in .env.local. Empty means "coming soon".
-const OFFICIAL_TOKEN: Address | null = GATE_TOKEN
+const OFFICIAL_TOKEN: Address | null = process.env.NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS ? (process.env.NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS as Address) : null
 const SHOWN_LAUNCHES = 40
 
 const EXPLORER = robinhoodChain.blockExplorers.default.url
