@@ -185,7 +185,7 @@ function View() {
   const sp = useSearchParams()
   const valid = /^0x[0-9a-fA-F]{40}$/.test(address ?? '')
   return (
-    <div className="obrix-site obrix-paper-grid obrix-explore">
+    <div className="obrix-site obrix-paper-grid obrix-explore obrix-interior-theme">
       <div className="obrix-x-ticker"><span><i /> LIVE</span><span>ROBINHOOD CHAIN</span></div>
       <div className="obrix-nav-wrap"><Navbar /></div>
       {valid
