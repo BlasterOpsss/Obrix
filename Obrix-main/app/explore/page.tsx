@@ -12,8 +12,8 @@ import { robinhoodChain } from '@/lib/wagmi-config'
 import { isImpersonation } from '@/lib/brand-guard'
 import { PONS_V2_FACTORY_ADDRESS } from '@/lib/hooks/use-launch-token'
 
-// The official OXRIZ token comes from NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS in .env.local. Empty means "coming soon".
-const OFFICIAL_TOKEN: Address | null = process.env.NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS ? (process.env.NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS as Address) : null
+// The official IGNIO token comes from NEXT_PUBLIC_IGNIO_TOKEN_ADDRESS in .env.local. Empty means "coming soon".
+const OFFICIAL_TOKEN: Address | null = process.env.NEXT_PUBLIC_IGNIO_TOKEN_ADDRESS ? (process.env.NEXT_PUBLIC_IGNIO_TOKEN_ADDRESS as Address) : null
 const SHOWN_LAUNCHES = 40
 
 const EXPLORER = robinhoodChain.blockExplorers.default.url
@@ -59,17 +59,17 @@ async function fetchRange(fromBlock: bigint, toBlock: bigint) {
 }
 
 // Only tokens launched through this site are shown: our launch form puts this tag into the launch salt.
-const OXRIZ_TAG = '4f5852495a'
+const IGNIO_TAG = '4f5852495a'
 const START_BLOCK = 103_606_000n
 const LEGACY_ALLOWED = ['0x00ac8318090ab86a088c4da4f05207433a6ae931'] // launched via this site before tagging existed
 const viaCache = new Map<string, boolean>()
 
-async function viaOxriz(txHash: string): Promise<boolean> {
+async function viaIgnio(txHash: string): Promise<boolean> {
   const hit = viaCache.get(txHash)
   if (hit !== undefined) return hit
   try {
     const tx = (await client.request({ method: 'eth_getTransactionByHash', params: [txHash] } as never)) as unknown as { input?: string } | null
-    const ok = Boolean(tx?.input?.toLowerCase().includes(OXRIZ_TAG))
+    const ok = Boolean(tx?.input?.toLowerCase().includes(IGNIO_TAG))
     viaCache.set(txHash, ok)
     return ok
   } catch { return false }
@@ -80,7 +80,7 @@ async function onlyOurs(list: Awaited<ReturnType<typeof fetchRange>>) {
   for (let i = 0; i < list.length; i += 10) {
     const part = list.slice(i, i + 10)
     const flags = await Promise.all(
-      part.map((l) => (LEGACY_ALLOWED.includes((l.args.token as string).toLowerCase()) ? true : viaOxriz(l.transactionHash)))
+      part.map((l) => (LEGACY_ALLOWED.includes((l.args.token as string).toLowerCase()) ? true : viaIgnio(l.transactionHash)))
     )
     part.forEach((l, k) => { if (flags[k]) out.push(l) })
   }
@@ -167,7 +167,7 @@ function TokenCard({ t, official }: { t: Launch; official?: boolean }) {
   return (
     <article className={`obrix-x-card ${official ? 'is-official' : ''}`}>
       <a className="obrix-x-card-head" href={`/token/${t.token}?curve=${t.curve}&block=${t.block.toString()}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-        <div className={`obrix-x-avatar ${official ? 'is-token' : ''}`}>{official ? <img src="/oxriz-token.svg" alt="" /> : <Logo src={t.logo} letter={t.symbol.slice(0, 1) || '?'} />}</div>
+        <div className={`obrix-x-avatar ${official ? 'is-token' : ''}`}>{official ? <img src="/ignio-token.svg" alt="" /> : <Logo src={t.logo} letter={t.symbol.slice(0, 1) || '?'} />}</div>
         <div className="obrix-x-card-title">
           <strong>{t.name}</strong>
           <span>${t.symbol}</span>
@@ -239,8 +239,8 @@ export default function ExplorePage() {
 
       <main className="obrix-x-main">
         <p className="obrix-x-kicker">[ 04 ] EXPLORE</p>
-        <h1>Every token born<br />through OxRiZ.</h1>
-        <p className="obrix-x-sub">Tokens launched through OxRiZ appear here automatically, the moment they go live.</p>
+        <h1>Every token born<br />through Ignio.</h1>
+        <p className="obrix-x-sub">Tokens launched through Ignio appear here automatically, the moment they go live.</p>
 
         <label className="obrix-x-search">
           <Search size={16} />
@@ -258,16 +258,16 @@ export default function ExplorePage() {
           {official ? (
             <TokenCard t={official} official />
           ) : OFFICIAL_TOKEN ? (
-            <p className="obrix-x-note">{loading ? 'Loading the official token…' : 'The official token was not found among the factory launches. Check NEXT_PUBLIC_OXRIZ_TOKEN_ADDRESS.'}</p>
+            <p className="obrix-x-note">{loading ? 'Loading the official token…' : 'The official token was not found among the factory launches. Check NEXT_PUBLIC_IGNIO_TOKEN_ADDRESS.'}</p>
           ) : (
             <article className="obrix-x-card is-official">
               <div className="obrix-x-card-head">
-                <div className="obrix-x-avatar is-token"><img src="/oxriz-token.svg" alt="OXRIZ token" /></div>
-                <div className="obrix-x-card-title"><strong>OxRiZ</strong><span>$OXRIZ</span></div>
+                <div className="obrix-x-avatar is-token"><img src="/ignio-token.svg" alt="IGNIO token" /></div>
+                <div className="obrix-x-card-title"><strong>Ignio</strong><span>$IGNIO</span></div>
                 <em className="obrix-x-badge">COMING SOON</em>
               </div>
               <p className="obrix-x-desc obrix-x-desc-full" style={{ marginBottom: 16 }}>
-                The official $OXRIZ token is coming soon. It has not launched yet, so any token using the name OXRIZ is not ours.
+                The official $IGNIO token is coming soon. It has not launched yet, so any token using the name IGNIO is not ours.
               </p>
               <dl className="obrix-x-rows" style={{ marginBottom: 0 }}>
                 <div><dt>contract</dt><dd>not launched yet</dd></div>
@@ -284,7 +284,7 @@ export default function ExplorePage() {
           {!loading && !error && shown.length === 0 && (
             <div className="obrix-x-empty">
               <pre>{`  .-------.\n / ? ? ? \\\n|  [_____]  |\n \\_________/`}</pre>
-              <p>{launches.length ? 'No tokens match your search.' : 'No community launches yet. The first token launched through OxRiZ will appear here.'}</p>
+              <p>{launches.length ? 'No tokens match your search.' : 'No community launches yet. The first token launched through Ignio will appear here.'}</p>
               <a href="/launch">Launch the first one <ArrowRight size={16} /></a>
             </div>
           )}
@@ -293,7 +293,7 @@ export default function ExplorePage() {
           </div>
         </section>
 
-        <p className="obrix-x-foot">{'// every token launched through oxriz · read from Robinhood Chain'}</p>
+        <p className="obrix-x-foot">{'// every token launched through ignio · read from Robinhood Chain'}</p>
       </main>
       <SiteFooter />
     </div>
