@@ -19,7 +19,7 @@ export default function DocsPage() {
     <PageShell>
       <p className="obrix-x-kicker">[ 02 ] DOCUMENTATION</p>
       <h1>Everything you need<br />to launch.</h1>
-      <p className="obrix-x-sub">A short guide to launching a token with OXRIZ on Robinhood Chain.</p>
+      <p className="obrix-x-sub">A short guide to launching a token with IGNIO on Robinhood Chain.</p>
 
       <nav className="obrix-x-toc">
         {TOC.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
@@ -27,7 +27,7 @@ export default function DocsPage() {
 
       <div className="obrix-x-doc">
         <h2 id="overview">Overview</h2>
-        <p>OXRIZ is an interface for the Pons V2 launch contracts on Robinhood Chain. You fill in your token details, connect a wallet and sign one transaction. The token is created by the Pons V2 factory, not by OXRIZ.</p>
+        <p>IGNIO is an interface for the Pons V2 launch contracts on Robinhood Chain. You fill in your token details, connect a wallet and sign one transaction. The token is created by the Pons V2 factory, not by IGNIO.</p>
 
         <h2 id="quick-start">Quick start</h2>
         <ol>
@@ -51,10 +51,10 @@ export default function DocsPage() {
         <h2 id="economics">Fees and economics</h2>
         <ul>
           <li>The launch fee is read from the factory at the moment you launch. Published Pons V2 docs currently describe 0.0005 ETH, but the live value is what you pay.</li>
-          <li>OXRIZ reads the current launch settings just before sending and pins them into your transaction, so the terms you saw are the terms you get.</li>
+          <li>IGNIO reads the current launch settings just before sending and pins them into your transaction, so the terms you saw are the terms you get.</li>
           <li>Creator tax is set to zero and buybacks are off by default.</li>
           <li>The token has a fixed supply that is minted to its bonding curve. If the curve completes, the launch graduates into a Uniswap V4 pool with locked liquidity.</li>
-          <li>OXRIZ does not estimate market cap or liquidity, and a developer buy is not part of the factory launch call.</li>
+          <li>IGNIO does not estimate market cap or liquidity, and a developer buy is not part of the factory launch call.</li>
         </ul>
 
         <h2 id="network">Network details</h2>
@@ -73,8 +73,8 @@ export default function DocsPage() {
         <h2 id="faq">FAQ</h2>
         <h3>Can a launch be undone?</h3>
         <p>No. Blockchain transactions are final and the launch fee is spent. Check every detail before you sign.</p>
-        <h3>Does OXRIZ hold my funds?</h3>
-        <p>No. Your wallet signs each transaction and OXRIZ never has access to your keys.</p>
+        <h3>Does IGNIO hold my funds?</h3>
+        <p>No. Your wallet signs each transaction and IGNIO never has access to your keys.</p>
         <h3>The button says Switch to Robinhood Chain.</h3>
         <p>Your wallet is on another network. Press the button and approve the network switch in your wallet.</p>
         <h3>My token is not on Explore yet.</h3>
