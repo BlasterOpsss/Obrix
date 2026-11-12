@@ -37,7 +37,7 @@ export default function TermsPage() {
         <p>Digital assets are volatile and you can lose everything you put in. Smart contracts can contain bugs, and networks can fail or change. Nothing on this site is financial, legal or tax advice, and nothing here is a promise of profit.</p>
 
         <h2>7. Third-party services</h2>
-        <p>IGNIO relies on services it does not control, such as the Pons V2 contracts, Robinhood Chain and its RPC providers, your wallet software, IPFS pinning and, if enabled, an AI provider. Those services have their own terms and may be unavailable or change at any time.</p>
+        <p>IGNIO relies on services it does not control, such as the Pons V2 contracts, Robinhood Chain and its RPC providers, your wallet software, IPFS pinning. Those services have their own terms and may be unavailable or change at any time.</p>
 
         <h2>8. No warranty</h2>
         <p>IGNIO is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind. We do not guarantee that the site will be uninterrupted, error-free or that information shown, such as the launch fee or launch list, is complete or current.</p>
