@@ -31,7 +31,7 @@ export default function LaunchPage() {
           <aside className="obrix-launchpad-hero-aside">
             <span className="obrix-launchpad-aside-label">YOUR WALLET. YOUR LAUNCH.</span>
             <div className="obrix-launchpad-aside-symbol">↗</div>
-            <p>Every launch is approved and signed by your connected wallet. OXRIZ never takes custody of your keys or funds.</p>
+            <p>Every launch is approved and signed by your connected wallet. IGNIO never takes custody of your keys or funds.</p>
             <a href="#token-setup">Start configuring <span>↓</span></a>
           </aside>
         </section>
