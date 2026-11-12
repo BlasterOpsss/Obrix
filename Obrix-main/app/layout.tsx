@@ -19,10 +19,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#08090b' },
-  ],
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -31,14 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "try{var t=localStorage.getItem('obrix-theme');document.documentElement.dataset.obrixTheme=(t==='night')?'night':'paper'}catch(e){document.documentElement.dataset.obrixTheme='paper'}",
-          }}
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <RainbowKitProviderWrapper>
           {children}
