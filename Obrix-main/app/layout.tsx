@@ -4,13 +4,13 @@ import { RainbowKitProviderWrapper } from '@/components/providers/rainbow-kit-pr
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'OXRIZ — Token Launch Infrastructure',
-  description: 'Launch tokens through Pons V2 on Robinhood Chain with OXRIZ.',
+  title: 'IGNIO — Token Launch Infrastructure',
+  description: 'Launch tokens through Pons V2 on Robinhood Chain with IGNIO.',
   generator: 'v0.app',
   icons: {
     icon: [
       {
-        url: '/icon.svg',
+        url: '/ignio-logo.svg',
         type: 'image/svg+xml',
       },
     ],
