@@ -1,4 +1,4 @@
-# OXRIZ
+# IGNIO
 
 A dark, premium token launch interface for Pons V2 on Robinhood Chain, built with Next.js, TypeScript, wagmi and viem.
 
