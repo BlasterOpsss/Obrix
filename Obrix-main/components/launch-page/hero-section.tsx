@@ -13,7 +13,7 @@ export function HeroSection() {
           A cleaner way to bring your token on-chain.
         </p>
         <p className="mx-auto max-w-xl text-sm leading-6 text-zinc-600">
-          Create through Pons V2’s live factory. Your wallet signs the transaction directly; OXRIZ never takes custody of your funds.
+          Create through Pons V2’s live factory. Your wallet signs the transaction directly; IGNIO never takes custody of your funds.
         </p>
       </div>
     </section>
