@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170" width="520" height="340">
-  <rect width="260" height="170" fill="#f3f3ee"/>
-  <text x="130" y="96" text-anchor="middle" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="-4" fill="#090909">ignio</text>
-  <rect x="62" y="112" width="136" height="9" rx="4.5" fill="#cdff00" stroke="#090909" stroke-width="2.5"/>
-  <circle cx="198" cy="116" r="7" fill="#090909"/>
-</svg>
