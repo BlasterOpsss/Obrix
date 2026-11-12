@@ -59,7 +59,7 @@ async function fetchRange(fromBlock: bigint, toBlock: bigint) {
 }
 
 // Only tokens launched through this site are shown: our launch form puts this tag into the launch salt.
-const IGNIO_TAG = '4f5852495a'
+const IGNIO_TAG = '49474e494f'
 const START_BLOCK = 103_606_000n
 const LEGACY_ALLOWED = ['0x00ac8318090ab86a088c4da4f05207433a6ae931'] // launched via this site before tagging existed
 const viaCache = new Map<string, boolean>()
