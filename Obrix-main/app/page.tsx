@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="ox-home">
       <header className="ox-home-header">
-        <a className="ox-home-logo" href="/" aria-label="OXRIZ home">OXRIZ</a>
+        <a className="ox-home-logo" href="/" aria-label="IGNIO home">IGNIO</a>
         <nav className="ox-home-links" aria-label="Main navigation">
           <a href="/explore">Tokens</a>
           <a href="/how-it-works">Safety</a>
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className="ox-home-bubble">
           Your token idea is ready to take shape. Describe what you want to create and review it before launch.
-          <small>OXRIZ · Robinhood Chain</small>
+          <small>IGNIO · Robinhood Chain</small>
         </div>
         <a className="ox-home-launch" href="/launch">Launch it <span aria-hidden="true">↗</span></a>
       </main>
