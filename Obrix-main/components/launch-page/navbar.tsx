@@ -23,7 +23,6 @@ export function Navbar() {
     { label: 'Home', href: '/' },
     { label: 'Launch', href: '/launch' },
     { label: 'Explore', href: '/explore' },
-    { label: 'Payments', href: '/payments' },
     { label: 'How it works', href: '/how-it-works' },
     { label: 'About', href: '/about' },
   ]
