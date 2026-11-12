@@ -8,7 +8,7 @@ import { robinhoodChain } from '@/lib/wagmi-config'
 const EXPLORER = robinhoodChain.blockExplorers.default.url
 
 const PRINCIPLES = [
-  { title: 'Non-custodial', body: 'Your wallet signs every transaction. OxRiZ never takes custody of your funds.' },
+  { title: 'Non-custodial', body: 'Your wallet signs every transaction. Ignio never takes custody of your funds.' },
   { title: 'Transparent', body: 'Launches are read straight from Robinhood Chain, so what you see on Explore is what is on-chain.' },
   { title: 'Simple', body: 'One clear path from an idea to a live token, with nothing hidden behind the form.' },
 ]
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <p className="obrix-x-kicker">[ 06 ] ABOUT</p>
       <h1>Launch tools,<br />kept simple.</h1>
       <p className="obrix-x-sub">
-        OxRiZ is a launch interface for Pons V2 on Robinhood Chain. It helps you turn an idea into a token, with a clean form, a live preview and an agent that drafts the details with you.
+        Ignio is a launch interface for Pons V2 on Robinhood Chain. It helps you turn an idea into a token, with a clean form, a live preview and an agent that drafts the details with you.
       </p>
 
       <p className="obrix-x-label">● PRINCIPLES</p>
@@ -48,7 +48,7 @@ export default function AboutPage() {
 
       <p className="obrix-x-label">● DISCLAIMER</p>
       <p className="obrix-x-note-box">
-        {'// oxriz is an interface, not the contracts. tokens launched here are created by their deployers, not by oxriz. launches spend real ETH and are irreversible. nothing on this site is financial advice. always verify transactions in your wallet.'}
+        {'// ignio is an interface, not the contracts. tokens launched here are created by their deployers, not by ignio. launches spend real ETH and are irreversible. nothing on this site is financial advice. always verify transactions in your wallet.'}
       </p>
 
       <p className="obrix-x-foot">{'// built for robinhood chain'}</p>
