@@ -26,7 +26,6 @@ interface FormState {
   xLink: string
   telegram: string
   website: string
-  developerBuy: number
   feeReceiver: string
   creatorTaxPct?: string
 }
@@ -52,7 +51,6 @@ export function LaunchForm({ onSubmit, onChange, initial }: LaunchFormProps) {
     xLink: '',
     telegram: '',
     website: '',
-    developerBuy: 0,
     feeReceiver: address || '',
     creatorTaxPct: '0',
   })
