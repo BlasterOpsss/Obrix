@@ -30,9 +30,9 @@ export function Navbar() {
   return (
     <header className="obrix-nav-shell">
       <nav className="obrix-nav">
-        <a href="/" className="obrix-brand" aria-label="OXRIZ home">
-          <span className="obrix-brand-mark"><img src="/logo.svg" alt="" width={26} height={26} /></span>
-          <span>OXRIZ</span>
+        <a href="/" className="obrix-brand" aria-label="IGNIO home">
+          <span className="obrix-brand-mark"><img src="/ignio-logo.svg" alt="" width={26} height={26} /></span>
+          <span>IGNIO</span>
         </a>
 
         <div className="obrix-desktop-links">
